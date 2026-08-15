@@ -45,7 +45,7 @@ export function SettingsClient({
   return (
     <div className="mx-auto w-full max-w-2xl space-y-10 p-6">
       <div>
-        <h1 className="text-xl font-semibold">Settings</h1>
+        <h1 className="font-serif text-xl font-semibold">Settings</h1>
         <p className="text-muted-foreground text-sm">
           Manage which metrics and activities are active.
         </p>

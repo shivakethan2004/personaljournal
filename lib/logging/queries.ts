@@ -7,6 +7,7 @@ import type {
   ActiveUserMetric,
   DailyPlan,
   EveningReflection,
+  InputType,
   QuickLog,
 } from "@/types/logging";
 
@@ -47,7 +48,15 @@ export async function getActiveUserMetrics(userId: string): Promise<ActiveUserMe
     .eq("active", true);
   if (error) throw error;
 
-  return (data ?? []).map((row: any) => {
+  type UserMetricRow = {
+    id: string;
+    metric_id: string | null;
+    custom_metric_id: string | null;
+    metrics_library: { name: string; description: string; input_type: InputType } | null;
+    custom_metrics: { name: string; description: string; input_type: InputType } | null;
+  };
+
+  return ((data ?? []) as unknown as UserMetricRow[]).map((row) => {
     const isCustom = !!row.custom_metric_id;
     const source = isCustom ? row.custom_metrics : row.metrics_library;
     return {

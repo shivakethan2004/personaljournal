@@ -1,30 +1,34 @@
 import type React from "react";
 
 /**
- * A minimal, deterministic color chip per activity — just enough to keep
- * history/quick-log scannable now. Phase 8 owns the real visual pass; this
- * is intentionally cheap (hash the id to a hue, fixed saturation/lightness)
- * rather than a stored color column, so there's nothing to migrate later
- * if Phase 8 replaces it with user-chosen colors or icons.
+ * Activities are assigned a color from a small, curated set of "pen"
+ * colors (defined as CSS custom properties in globals.css) rather than a
+ * randomly hashed hue — it should read like picking a different colored
+ * pen for each notebook, not an arbitrary rainbow.
  */
-export function activityHue(activityId: string): number {
+const PEN_COUNT = 8;
+
+function penIndex(activityId: string): number {
   let hash = 0;
   for (let i = 0; i < activityId.length; i++) {
     hash = (hash * 31 + activityId.charCodeAt(i)) >>> 0;
   }
-  return hash % 360;
+  return (hash % PEN_COUNT) + 1;
+}
+
+export function activityPenVar(activityId: string): string {
+  return `var(--pen-${penIndex(activityId)})`;
 }
 
 export function activityChipStyle(activityId: string): React.CSSProperties {
-  const hue = activityHue(activityId);
+  const pen = activityPenVar(activityId);
   return {
-    backgroundColor: `hsl(${hue} 70% 94%)`,
-    color: `hsl(${hue} 55% 30%)`,
-    borderColor: `hsl(${hue} 60% 80%)`,
+    color: pen,
+    borderColor: pen,
+    backgroundColor: "var(--card)",
   };
 }
 
 export function activityDotStyle(activityId: string): React.CSSProperties {
-  const hue = activityHue(activityId);
-  return { backgroundColor: `hsl(${hue} 65% 50%)` };
+  return { backgroundColor: activityPenVar(activityId) };
 }

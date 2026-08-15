@@ -23,9 +23,9 @@ export default async function EveningReflectionPage() {
 
   return (
     <main className="mx-auto max-w-xl px-4 py-6">
-      <h1 className="mb-1 text-xl font-semibold">Evening reflection</h1>
+      <h1 className="mb-1 font-serif text-xl font-semibold">Evening reflection</h1>
       <p className="mb-4 text-sm text-muted-foreground">
-        One entry for the whole day — tag individual answers to an activity if it's relevant.
+        One entry for the whole day — tag individual answers to an activity if it&apos;s relevant.
       </p>
       <EveningReflectionForm
         textMetrics={textMetrics}

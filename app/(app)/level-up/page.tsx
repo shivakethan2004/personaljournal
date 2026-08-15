@@ -26,8 +26,8 @@ export default async function LevelUpPage() {
   return (
     <main className="mx-auto max-w-2xl px-4 py-6">
       <div className="mb-4 flex items-center justify-between">
-        <h1 className="text-xl font-semibold">Level Up</h1>
-        <span className="text-sm text-muted-foreground">{totalPoints} pts</span>
+        <h1 className="font-serif text-xl font-semibold">Level Up</h1>
+        <span className="tabular-figures text-sm text-muted-foreground">{totalPoints} pts</span>
       </div>
 
       {currentTask ? (

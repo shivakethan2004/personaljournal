@@ -21,9 +21,9 @@ export default async function MorningPlanPage() {
 
   return (
     <main className="mx-auto max-w-xl px-4 py-6">
-      <h1 className="mb-1 text-xl font-semibold">Morning plan</h1>
+      <h1 className="mb-1 font-serif text-xl font-semibold">Morning plan</h1>
       <p className="mb-4 text-sm text-muted-foreground">
-        Fill in what you're doing today — skip anything that doesn't apply.
+        Fill in what you&apos;re doing today — skip anything that doesn&apos;t apply.
       </p>
       <MorningPlanForm activities={activities} existingPlans={existingPlans} entryDate={entryDate} />
     </main>

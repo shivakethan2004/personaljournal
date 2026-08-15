@@ -10,7 +10,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { confirmRecoveryGap } from "@/app/quick-log/actions";
+import { confirmRecoveryGap } from "@/app/(app)/quick-log/actions";
 
 interface RecoveryGapPromptProps {
   confirmationId: string;

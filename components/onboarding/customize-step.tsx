@@ -33,10 +33,10 @@ export function CustomizeStep({
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold">Pick your metrics</h2>
+        <h2 className="font-serif text-lg font-semibold">Pick your metrics</h2>
         <p className="text-muted-foreground text-sm">
           These are suggested from your quiz results. Uncheck anything that
-          doesn't fit, or browse the full library to add more.
+          doesn&apos;t fit, or browse the full library to add more.
         </p>
       </div>
 

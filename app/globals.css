@@ -2,47 +2,99 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+  Design system: "lab notebook."
+  Paper surfaces, fountain-pen ink accents, ruled-line texture, a serif
+  reserved for headings/entry titles, Plex Sans for UI chrome, Plex Mono
+  for anything that's a measurement (numbers, timers, tallies, points).
+*/
+
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --radius: 0.5rem;
+
+  --paper: oklch(0.96 0.012 95);
+  --paper-raised: oklch(0.985 0.006 95);
+  --ink: oklch(0.24 0.015 110);
+  --ink-soft: oklch(0.5 0.02 110);
+  --rule: oklch(0.85 0.02 95);
+
+  --pen: oklch(0.42 0.09 148);
+  --pen-foreground: oklch(0.98 0.01 148);
+  --pen-soft: oklch(0.93 0.035 148);
+  --pen-soft-foreground: oklch(0.3 0.07 148);
+
+  --flag: oklch(0.48 0.13 35);
+  --flag-foreground: oklch(0.98 0.01 35);
+  --flag-soft: oklch(0.93 0.04 35);
+  --flag-soft-foreground: oklch(0.36 0.11 35);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper-raised);
+  --card-foreground: var(--ink);
+  --popover: var(--paper-raised);
+  --popover-foreground: var(--ink);
+  --primary: var(--pen);
+  --primary-foreground: var(--pen-foreground);
+  --secondary: var(--paper-raised);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.93 0.012 95);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--pen-soft);
+  --accent-foreground: var(--pen-soft-foreground);
+  --destructive: var(--flag);
+  --destructive-foreground: var(--flag-foreground);
+  --border: var(--rule);
+  --input: var(--rule);
+  --ring: var(--pen);
+
+  /* Curated pen colors for activities — chosen, not randomly hued. */
+  --pen-1: oklch(0.42 0.09 148); /* forest */
+  --pen-2: oklch(0.48 0.13 35); /* rust */
+  --pen-3: oklch(0.45 0.1 255); /* indigo */
+  --pen-4: oklch(0.55 0.11 70); /* ochre */
+  --pen-5: oklch(0.45 0.08 300); /* plum */
+  --pen-6: oklch(0.48 0.09 200); /* slate blue */
+  --pen-7: oklch(0.5 0.12 20); /* brick */
+  --pen-8: oklch(0.45 0.07 165); /* teal */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --paper: oklch(0.2 0.01 110);
+  --paper-raised: oklch(0.25 0.012 110);
+  --ink: oklch(0.93 0.012 95);
+  --ink-soft: oklch(0.68 0.02 95);
+  --rule: oklch(0.34 0.015 110);
+
+  --pen: oklch(0.75 0.12 148);
+  --pen-foreground: oklch(0.18 0.03 148);
+  --pen-soft: oklch(0.3 0.05 148);
+  --pen-soft-foreground: oklch(0.85 0.08 148);
+
+  --flag: oklch(0.72 0.13 40);
+  --flag-foreground: oklch(0.18 0.03 40);
+  --flag-soft: oklch(0.32 0.06 35);
+  --flag-soft-foreground: oklch(0.85 0.09 35);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper-raised);
+  --card-foreground: var(--ink);
+  --popover: var(--paper-raised);
+  --popover-foreground: var(--ink);
+  --primary: var(--pen);
+  --primary-foreground: var(--pen-foreground);
+  --secondary: var(--paper-raised);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.27 0.012 110);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--pen-soft);
+  --accent-foreground: var(--pen-soft-foreground);
+  --destructive: var(--flag);
+  --destructive-foreground: var(--flag-foreground);
+  --border: var(--rule);
+  --input: var(--rule);
+  --ring: var(--pen);
 }
 
 @theme inline {
@@ -61,18 +113,52 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-flag: var(--flag);
+  --color-flag-soft: var(--flag-soft);
+  --color-flag-soft-foreground: var(--flag-soft-foreground);
+  --color-pen: var(--pen);
+  --color-pen-soft: var(--pen-soft);
+  --color-pen-soft-foreground: var(--pen-soft-foreground);
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, monospace;
+
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* Signature element: faint ruled-paper lines behind the authenticated app
+   shell. Restrained — a wash, not a pattern you consciously notice. */
+.ruled-paper {
+  /* background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 27px,
+    var(--rule) 27px,
+    var(--rule) 28px
+  );
+  background-attachment: local; */
+}
+
+.dark .ruled-paper {
+  opacity: 0.9;
+}
+
+/* Tabular/measurement numerals wherever data is displayed as a readout. */
+.tabular-figures {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
 }

@@ -18,7 +18,7 @@ export function ResultsStep({
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold">Here's what stood out</h2>
+        <h2 className="font-serif text-lg font-semibold">Here&apos;s what stood out</h2>
         <p className="text-muted-foreground text-sm">
           Based on your answers, these patterns showed up most. Each comes
           with a metric you could track to work with it.
@@ -50,7 +50,7 @@ export function ResultsStep({
 
         {top.length === 0 && (
           <p className="text-muted-foreground text-sm">
-            Nothing scored strongly enough to surface — that's fine, you can
+            Nothing scored strongly enough to surface — that&apos;s fine, you can
             still browse the full metric library on the next screen.
           </p>
         )}

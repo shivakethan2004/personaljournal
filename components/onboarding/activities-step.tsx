@@ -52,10 +52,10 @@ export function ActivitiesStep({
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold">What are you tracking?</h2>
+        <h2 className="font-serif text-lg font-semibold">What are you tracking?</h2>
         <p className="text-muted-foreground text-sm">
           Define the domains of your life you want logs to belong to — cold
-          calls, gym, a side project, whatever's real for you. At least one
+          calls, gym, a side project, whatever&apos;s real for you. At least one
           is required.
         </p>
       </div>
@@ -120,7 +120,7 @@ export function ActivitiesStep({
         </ul>
       )}
 
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      {error && <p className="text-sm text-flag">{error}</p>}
 
       <div className="flex items-center justify-between border-t pt-4">
         <button

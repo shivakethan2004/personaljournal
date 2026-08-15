@@ -14,7 +14,7 @@ export function LevelUpHistoryList({ items }: LevelUpHistoryListProps) {
             <div className="flex items-start justify-between gap-2">
               <p className="text-sm font-medium">{item.level_up_tasks?.task_text ?? "Task"}</p>
               {item.points_awarded !== null && (
-                <span className="shrink-0 text-xs text-muted-foreground">
+                <span className="tabular-figures shrink-0 text-xs text-muted-foreground">
                   {item.points_awarded} pts
                 </span>
               )}

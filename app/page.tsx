@@ -1,56 +1,34 @@
-"use client";
+import Link from "next/link";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import { getPostAuthRedirect } from "@/lib/auth/post-auth-redirect";
+import { Button } from "@/components/ui/button";
 
-import { useEffect, useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+export default async function Home() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
-type Status = "checking" | "ok" | "error";
-
-export default function Home() {
-  const [status, setStatus] = useState<Status>("checking");
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    try {
-      const supabase = createClient();
-      // A cheap call that just confirms the client is wired up —
-      // it doesn't require any tables to exist yet.
-      supabase.auth.getSession().then(({ error }) => {
-        if (error) {
-          setStatus("error");
-          setMessage(error.message);
-        } else {
-          setStatus("ok");
-        }
-      });
-    } catch (err) {
-      setStatus("error");
-      setMessage(err instanceof Error ? err.message : String(err));
-    }
-  }, []);
+  if (user) {
+    redirect(await getPostAuthRedirect(supabase, user.id));
+  }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-8">
-      <h1 className="text-2xl font-semibold">Process Journal</h1>
-      <p className="text-muted-foreground text-sm">Phase 1 — scaffold</p>
-
-      <div className="rounded-md border px-4 py-3 text-sm">
-        {status === "checking" && "Checking Supabase client…"}
-        {status === "ok" && (
-          <span className="text-green-600">
-            ✓ Supabase client initialized without error
-          </span>
-        )}
-        {status === "error" && (
-          <span className="text-red-600">
-            ✗ Supabase client error: {message}
-            <br />
-            <span className="text-muted-foreground">
-              Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY
-              in .env.local
-            </span>
-          </span>
-        )}
+    <main className="ruled-paper flex min-h-screen flex-col items-center justify-center gap-6 px-6 text-center">
+      <div className="space-y-2">
+        <p className="text-xs uppercase tracking-wide text-muted-foreground">Process Journal</p>
+        <h1 className="font-serif text-3xl font-semibold text-foreground">
+          Make the pattern visible.
+        </h1>
+        <p className="mx-auto max-w-sm text-sm text-muted-foreground">
+          A structured notebook for the psychological patterns that block progress — logged in
+          plain numbers, not vibes.
+        </p>
       </div>
+      <Button asChild size="lg">
+        <Link href="/login">Sign in</Link>
+      </Button>
     </main>
   );
 }
