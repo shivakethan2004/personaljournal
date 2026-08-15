@@ -32,7 +32,7 @@ export default async function HistoryPage({ searchParams }: HistoryPageProps) {
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-6">
-      <h1 className="mb-4 text-xl font-semibold">History</h1>
+      <h1 className="mb-4 font-serif text-xl font-semibold">History</h1>
 
       {isEmpty ? (
         <EmptyState />
@@ -64,7 +64,7 @@ function EmptyState() {
       <div>
         <p className="font-medium">No entries yet</p>
         <p className="mt-1 max-w-xs text-sm text-muted-foreground">
-          Once you log a morning plan, a quick log, or an evening reflection, it'll show up here.
+          Once you log a morning plan, a quick log, or an evening reflection, it&apos;ll show up here.
         </p>
       </div>
     </div>

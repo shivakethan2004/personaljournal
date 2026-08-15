@@ -17,7 +17,7 @@ export default async function QuickLogPage() {
 
   return (
     <main className="mx-auto max-w-md px-4 py-6">
-      <h1 className="mb-4 text-xl font-semibold">Quick log</h1>
+      <h1 className="mb-4 font-serif text-xl font-semibold">Quick log</h1>
       <QuickLogWidget
         activities={activities}
         metrics={metrics}

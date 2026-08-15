@@ -7,7 +7,7 @@ import { AlertTriangle, RotateCcw, Loader2 } from "lucide-react";
 import { ActivitySelector } from "./activity-selector";
 import { MetricInput, type MetricInputValue } from "./metric-input";
 import { RecoveryGapPrompt } from "./recovery-gap-prompt";
-import { createQuickLog } from "@/app/quick-log/actions";
+import { createQuickLog } from "@/app/(app)/quick-log/actions";
 import { metricKey } from "@/lib/logging/metric-key";
 import type { Activity, ActiveUserMetric } from "@/types/logging";
 

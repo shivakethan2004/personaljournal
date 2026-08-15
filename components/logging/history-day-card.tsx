@@ -45,7 +45,7 @@ export function HistoryDayCard({ day }: { day: HistoryDay }) {
   return (
     <Card>
       <CardHeader className="pb-3">
-        <CardTitle className="text-base">{formatDateHeading(day.date)}</CardTitle>
+        <CardTitle className="font-serif text-base font-semibold">{formatDateHeading(day.date)}</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {day.plans.length > 0 && (

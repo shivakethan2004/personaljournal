@@ -38,9 +38,9 @@ export function CustomMetricBuilderStep({
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold">Add a custom metric</h2>
+        <h2 className="font-serif text-lg font-semibold">Add a custom metric</h2>
         <p className="text-muted-foreground text-sm">
-          Optional — if the library doesn't cover something you want to
+          Optional — if the library doesn&apos;t cover something you want to
           track, define it here. You can skip this.
         </p>
       </div>

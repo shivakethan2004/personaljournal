@@ -75,7 +75,7 @@ function NumberInput({ value, onChange }: { value: number | null; onChange: (v: 
         inputMode="numeric"
         value={value ?? ""}
         onChange={(e) => onChange(e.target.value === "" ? null : Number(e.target.value))}
-        className="w-20 text-center"
+        className="w-20 text-center tabular-figures"
       />
       <Button
         type="button"
@@ -102,7 +102,7 @@ function TallyInput({ value, onChange }: { value: number | null; onChange: (v: n
       >
         +1
       </Button>
-      <span className="text-2xl font-semibold tabular-nums">{count}</span>
+      <span className="tabular-figures text-2xl font-semibold">{count}</span>
       {count > 0 && (
         <Button type="button" variant="ghost" size="sm" onClick={() => onChange(null)}>
           Reset
@@ -141,7 +141,7 @@ function TimerInput({ value, onChange }: { value: number | null; onChange: (v: n
 
   return (
     <div className="flex items-center gap-3">
-      <span className="w-16 text-xl font-semibold tabular-nums">
+      <span className="tabular-figures w-16 text-xl font-semibold">
         {String(mins).padStart(2, "0")}:{String(secs).padStart(2, "0")}
       </span>
       <Button

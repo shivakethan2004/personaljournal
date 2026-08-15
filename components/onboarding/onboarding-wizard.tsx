@@ -99,7 +99,7 @@ export function OnboardingWizard({
   const stepIndex = STEP_ORDER.indexOf(step);
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-6 p-6">
+    <div className="ruled-paper mx-auto min-h-screen w-full max-w-2xl space-y-6 p-6">
       <ProgressBar current={stepIndex} total={STEP_ORDER.length} />
 
       {step === "quiz" && (

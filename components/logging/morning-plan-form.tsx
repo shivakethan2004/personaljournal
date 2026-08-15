@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Loader2 } from "lucide-react";
-import { saveDailyPlan, clearDailyPlan } from "@/app/morning/actions";
+import { saveDailyPlan, clearDailyPlan } from "@/app/(app)/morning/actions";
 import type { Activity, DailyPlan } from "@/types/logging";
 
 interface MorningPlanFormProps {
@@ -93,12 +93,12 @@ function ActivityPlanRow({
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center justify-between text-base">
           {activity.name}
-          {state.saved && <Check className="h-4 w-4 text-green-600" />}
+          {state.saved && <Check className="h-4 w-4 text-primary" />}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="space-y-1.5">
-          <Label htmlFor={`objective-${activity.id}`}>Today's objective</Label>
+          <Label htmlFor={`objective-${activity.id}`}>Today&apos;s objective</Label>
           <Input
             id={`objective-${activity.id}`}
             placeholder="e.g. 30 cold calls, or leave blank to skip"

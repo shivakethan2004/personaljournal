@@ -19,7 +19,7 @@ export function QuizStep({
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-lg font-semibold">
+        <h2 className="font-serif text-lg font-semibold">
           How much does each of these resonate?
         </h2>
         <p className="text-muted-foreground text-sm">
